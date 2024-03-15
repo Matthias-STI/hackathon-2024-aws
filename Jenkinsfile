@@ -28,7 +28,7 @@ pipeline {
    }
     stage("DEPLOY & ACTIVATE") {
       steps {
-        
+        sh """echo Last Step"""
       }
     }
   }
