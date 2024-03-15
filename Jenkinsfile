@@ -15,7 +15,7 @@ pipeline {
     }
     stage("UNDEPLOY DOCKER") {
        steps {
-         sh """docker stop ${IMAGE_REPO_NAME}:${IMAGE_TAG}"""
+         sh """docker stop ${IMAGE_REPO_NAME}:${IMAGE_TAG}; true"""
       }
    }
     stage("BUILD DOCKER IMAGE") {
