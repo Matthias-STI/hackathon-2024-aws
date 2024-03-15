@@ -8,6 +8,12 @@ pipeline {
         REPOSITORY_URI="992382586240.dkr.ecr.eu-west-2.amazonaws.com/frontend_angular"
   }
   stages {
+    stage("PRINT STUFF") {
+      steps {
+        sh """whoami"""
+      }
+    }
+    
     stage("BUILD DOCKER IMAGE") {
       steps {
         script {
