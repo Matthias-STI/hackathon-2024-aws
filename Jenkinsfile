@@ -23,7 +23,7 @@ pipeline {
     }
      stage("DEPLOY DOCKER") {
        steps {
-         sh """docker run ${IMAGE_REPO_NAME}:${IMAGE_TAG}"""
+         sh """docker run -p 80:80 -d ${IMAGE_REPO_NAME}:${IMAGE_TAG}"""
       }
    }
     stage("DEPLOY & ACTIVATE") {
