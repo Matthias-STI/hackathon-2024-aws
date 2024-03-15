@@ -13,7 +13,11 @@ pipeline {
         sh """whoami"""
       }
     }
-    
+    stage("UNDEPLOY DOCKER") {
+       steps {
+         sh """docker stop ${IMAGE_REPO_NAME}:${IMAGE_TAG}"""
+      }
+   }
     stage("BUILD DOCKER IMAGE") {
       steps {
         script {
